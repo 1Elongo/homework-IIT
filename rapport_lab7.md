@@ -14,4 +14,16 @@
 - Создана папка : 'mkdir lab_git`
 - Инициализация : 'git init`
 
+## 4.Инициализация репозитория Git
+git init
+
+## 5.Создание файла отчета
+### 6.Первый коммит
+git add rapport_lab7.md
+git commit -m "Création initiale du rapport - Étape 4"
+
+## 7.Создание ветки
+git branch branche-rapport
+git checkout branche-rapport
+
 [Продолжайте добавлять шаги по ходу дела]
