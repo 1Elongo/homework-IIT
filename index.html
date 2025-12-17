@@ -1,0 +1,1242 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Портфолио Эдилсона Макуакуа | МТУСИ БИК 2504</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #0d47a1;
+            --secondary-color: #1565c0;
+            --accent-color: #1976d2;
+            --dark-color: #002171;
+            --light-color: #e3f2fd;
+            --text-color: #212121;
+            --card-bg: #ffffff;
+            --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', 'Segoe UI', sans-serif;
+        }
+        
+        body {
+            background-color: #f8f9fa;
+            color: var(--text-color);
+            line-height: 1.7;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--dark-color), var(--primary-color));
+            color: white;
+            padding: 25px 0;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .logo-icon {
+            font-size: 2.8rem;
+        }
+        
+        .logo-text h1 {
+            font-size: 1.8rem;
+            margin-bottom: 5px;
+            font-weight: 700;
+        }
+        
+        .logo-text p {
+            opacity: 0.9;
+            font-size: 0.95rem;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: var(--transition);
+            font-size: 1.05rem;
+        }
+        
+        nav a:hover, nav a.active {
+            background-color: rgba(255, 255, 255, 0.15);
+            transform: translateY(-2px);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.8rem;
+            cursor: pointer;
+            padding: 5px;
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 80px 0 60px;
+            background: linear-gradient(rgba(13, 71, 161, 0.05), rgba(13, 71, 161, 0.05)), url('https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1169&q=80');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.85);
+        }
+        
+        .hero-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero-image {
+            flex: 1;
+            text-align: center;
+        }
+        
+        .profile-avatar {
+            width: 280px;
+            height: 280px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary-color), var(--dark-color));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            border: 8px solid white;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+        
+        .profile-avatar i {
+            font-size: 10rem;
+            color: white;
+        }
+        
+        .hero-text {
+            flex: 1.5;
+        }
+        
+        .hero-text h2 {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            color: var(--dark-color);
+            font-weight: 800;
+        }
+        
+        .hero-text .subtitle {
+            font-size: 1.4rem;
+            color: var(--secondary-color);
+            margin-bottom: 25px;
+            font-weight: 600;
+            padding-bottom: 15px;
+            border-bottom: 3px solid var(--accent-color);
+            display: inline-block;
+        }
+        
+        .hero-text p {
+            margin-bottom: 30px;
+            font-size: 1.15rem;
+            background: rgba(255, 255, 255, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 5px solid var(--accent-color);
+        }
+        
+        .btn {
+            display: inline-block;
+            background: linear-gradient(to right, var(--accent-color), var(--secondary-color));
+            color: white;
+            padding: 14px 32px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.05rem;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(25, 118, 210, 0.3);
+            letter-spacing: 0.5px;
+        }
+        
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(25, 118, 210, 0.4);
+            background: linear-gradient(to right, var(--secondary-color), var(--primary-color));
+        }
+        
+        /* Sections */
+        section {
+            padding: 80px 0;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title {
+            color: var(--dark-color);
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 5px;
+            background: linear-gradient(to right, var(--accent-color), var(--primary-color));
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 3px;
+        }
+        
+        .section-subtitle {
+            color: var(--secondary-color);
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 20px auto 0;
+        }
+        
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+        
+        .info-card {
+            background-color: var(--card-bg);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border-top: 5px solid var(--accent-color);
+        }
+        
+        .info-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .info-card h3 {
+            color: var(--dark-color);
+            margin-bottom: 25px;
+            font-size: 1.6rem;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-weight: 700;
+        }
+        
+        .info-card h3 i {
+            color: var(--accent-color);
+            background: var(--light-color);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .info-item {
+            margin-bottom: 20px;
+            display: flex;
+            padding: 10px 0;
+            border-bottom: 1px dashed #eee;
+        }
+        
+        .info-item:last-child {
+            border-bottom: none;
+        }
+        
+        .info-label {
+            font-weight: 700;
+            min-width: 180px;
+            color: var(--secondary-color);
+        }
+        
+        .info-value {
+            font-weight: 500;
+        }
+        
+        /* Skills Section */
+        .skills-section {
+            background-color: var(--light-color);
+        }
+        
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+        
+        .skill-category {
+            background-color: var(--card-bg);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .skill-category:hover {
+            transform: translateY(-5px);
+        }
+        
+        .skill-category h3 {
+            color: var(--dark-color);
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid var(--light-color);
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        
+        .skill-item {
+            margin-bottom: 25px;
+        }
+        
+        .skill-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        
+        .skill-name {
+            font-weight: 600;
+            font-size: 1.05rem;
+        }
+        
+        .skill-percentage {
+            color: var(--accent-color);
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+        
+        .skill-bar {
+            height: 12px;
+            background-color: #e0e0e0;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        
+        .skill-progress {
+            height: 100%;
+            background: linear-gradient(to right, var(--accent-color), var(--primary-color));
+            border-radius: 6px;
+            width: 0;
+            transition: width 1.5s ease-in-out;
+        }
+        
+        /* Projects Section */
+        .projects-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 40px;
+        }
+        
+        .project-card {
+            background-color: var(--card-bg);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .project-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 20px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .project-header {
+            height: 200px;
+            background: linear-gradient(135deg, var(--primary-color), var(--dark-color));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 4rem;
+        }
+        
+        .project-content {
+            padding: 30px;
+        }
+        
+        .project-content h3 {
+            color: var(--dark-color);
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        
+        .project-content p {
+            margin-bottom: 20px;
+            color: #555;
+        }
+        
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 20px 0;
+        }
+        
+        .tag {
+            background-color: var(--light-color);
+            color: var(--secondary-color);
+            padding: 7px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+        
+        /* Contact Section */
+        .contact-section {
+            background-color: var(--light-color);
+        }
+        
+        .contact-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 50px;
+        }
+        
+        .contact-info {
+            background-color: var(--card-bg);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+        }
+        
+        .contact-info h3 {
+            color: var(--dark-color);
+            margin-bottom: 30px;
+            font-size: 1.6rem;
+            font-weight: 700;
+            border-bottom: 3px solid var(--accent-color);
+            padding-bottom: 15px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 30px;
+        }
+        
+        .contact-icon {
+            background-color: var(--light-color);
+            color: var(--accent-color);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+        
+        .contact-text h4 {
+            color: var(--dark-color);
+            margin-bottom: 8px;
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+        
+        .contact-form {
+            background-color: var(--card-bg);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+        }
+        
+        .contact-form h3 {
+            color: var(--dark-color);
+            margin-bottom: 30px;
+            font-size: 1.6rem;
+            font-weight: 700;
+            border-bottom: 3px solid var(--accent-color);
+            padding-bottom: 15px;
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 10px;
+            color: var(--secondary-color);
+            font-weight: 600;
+            font-size: 1.05rem;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: var(--transition);
+            background-color: #fafafa;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent-color);
+            background-color: white;
+            box-shadow: 0 0 0 3px rgba(25, 118, 210, 0.1);
+        }
+        
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--dark-color), var(--primary-color));
+            color: white;
+            padding: 50px 0 30px;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-logo-icon {
+            font-size: 3rem;
+        }
+        
+        .footer-logo-text h2 {
+            font-size: 1.8rem;
+            margin-bottom: 5px;
+            font-weight: 700;
+        }
+        
+        .footer-logo-text p {
+            opacity: 0.9;
+            font-size: 1rem;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 25px;
+            margin: 30px 0;
+        }
+        
+        .social-links a {
+            color: white;
+            font-size: 1.8rem;
+            transition: var(--transition);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .social-links a:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-5px);
+        }
+        
+        .copyright {
+            margin-top: 30px;
+            text-align: center;
+            opacity: 0.8;
+            font-size: 1rem;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            width: 100%;
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .hero-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 40px;
+            }
+            
+            .hero-text h2 {
+                font-size: 2.4rem;
+            }
+            
+            .section-title {
+                font-size: 2.2rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .mobile-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--dark-color);
+                padding: 25px;
+                box-shadow: var(--shadow);
+                z-index: 999;
+            }
+            
+            .mobile-menu.active {
+                display: block;
+            }
+            
+            .mobile-menu ul {
+                list-style: none;
+            }
+            
+            .mobile-menu li {
+                margin-bottom: 20px;
+            }
+            
+            .mobile-menu a {
+                color: white;
+                text-decoration: none;
+                font-size: 1.2rem;
+                display: block;
+                padding: 12px 0;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            }
+            
+            .mobile-menu a:last-child {
+                border-bottom: none;
+            }
+            
+            .section-title {
+                font-size: 1.9rem;
+            }
+            
+            .profile-avatar {
+                width: 240px;
+                height: 240px;
+            }
+            
+            .info-card, .skill-category, .contact-info, .contact-form {
+                padding: 30px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .logo-text h1 {
+                font-size: 1.5rem;
+            }
+            
+            .hero-text h2 {
+                font-size: 2rem;
+            }
+            
+            .profile-avatar {
+                width: 200px;
+                height: 200px;
+            }
+            
+            .profile-avatar i {
+                font-size: 7rem;
+            }
+            
+            .info-item {
+                flex-direction: column;
+                gap: 5px;
+            }
+            
+            .info-label {
+                min-width: auto;
+            }
+            
+            .section-title {
+                font-size: 1.7rem;
+            }
+            
+            .btn {
+                padding: 12px 25px;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-broadcast-tower"></i>
+                </div>
+                <div class="logo-text">
+                    <h1>Эдилсон Макуакуа</h1>
+                    <p>Студент МТУСИ | Радио и телевидение | БИК 2504</p>
+                </div>
+            </div>
+            
+            <nav class="desktop-menu">
+                <ul>
+                    <li><a href="#home" class="active">Главная</a></li>
+                    <li><a href="#about">Обо мне</a></li>
+                    <li><a href="#skills">Навыки</a></li>
+                    <li><a href="#projects">Проекты</a></li>
+                    <li><a href="#contact">Контакты</a></li>
+                </ul>
+            </nav>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobileMenu">
+            <ul>
+                <li><a href="#home" class="active">Главная</a></li>
+                <li><a href="#about">Обо мне</a></li>
+                <li><a href="#skills">Навыки</a></li>
+                <li><a href="#projects">Проекты</a></li>
+                <li><a href="#contact">Контакты</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container hero-content">
+            <div class="hero-image">
+                <div class="profile-avatar">
+                    <i class="fas fa-user"></i>
+                </div>
+            </div>
+            <div class="hero-text">
+                <h2>Эдилсон Макуакуа</h2>
+                <p class="subtitle">Студент МТУСИ, направление "Радио и телевидение"</p>
+                <p>Я являюсь студентом первого курса Московского технического университета связи и информатики (МТУСИ) на факультете радио и телевидения (группа БИК 2504). Моя цель — стать высококвалифицированным специалистом в области радиотехники, телевизионного вещания и современных телекоммуникационных технологий. Стремлюсь совмещать фундаментальные теоретические знания с практическими навыками в области передачи и обработки сигналов.</p>
+                <a href="#contact" class="btn">Связаться со мной</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Обо мне</h2>
+                <p class="section-subtitle">Подробная информация о моём образовании, целях и университете</p>
+            </div>
+            <div class="about-content">
+                <div class="info-card">
+                    <h3><i class="fas fa-user-graduate"></i> Образование</h3>
+                    <div class="info-item">
+                        <div class="info-label">Университет:</div>
+                        <div class="info-value">МТУСИ (Московский технический университет связи и информатики)</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Направление:</div>
+                        <div class="info-value">Радио и телевидение</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Группа:</div>
+                        <div class="info-value">БИК 2504</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Курс:</div>
+                        <div class="info-value">1 курс (первый год обучения)</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Год поступления:</div>
+                        <div class="info-value">2025</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Статус:</div>
+                        <div class="info-value">Студент очной формы обучения</div>
+                    </div>
+                </div>
+                
+                <div class="info-card">
+                    <h3><i class="fas fa-bullseye"></i> Цели и интересы</h3>
+                    <p style="margin-bottom: 20px; padding: 0; border: none; background: none;">Мои академические интересы сконцентрированы на современных технологиях радиосвязи, цифрового телевидения, спутниковых системах и мультимедийных технологиях. Я стремлюсь к глубокому пониманию принципов передачи, приёма и обработки сигналов, проектирования радиотехнических устройств и систем.</p>
+                    <p style="margin-bottom: 20px; padding: 0; border: none; background: none;">В процессе обучения планирую освоить такие ключевые дисциплины как: теория электрических цепей, электроника, радиотехнические цепи и сигналы, системы передачи информации, цифровая обработка сигналов, антенно-фидерные устройства и другие.</p>
+                    <p style="margin: 0; padding: 0; border: none; background: none;">В будущем планирую работать в области разработки и внедрения современных систем телерадиовещания, а также заниматься исследованиями в сфере беспроводных технологий связи следующего поколения.</p>
+                </div>
+                
+                <div class="info-card">
+                    <h3><i class="fas fa-university"></i> МТУСИ</h3>
+                    <p style="margin-bottom: 20px; padding: 0; border: none; background: none;">Московский технический университет связи и информатики (МТУСИ) — это один из ведущих технических вузов России в области телекоммуникаций, связи и информатики. Университет обеспечивает высококачественное образование, сочетающее фундаментальные теоретические знания с практическими навыками в современных лабораториях.</p>
+                    <p style="margin-bottom: 20px; padding: 0; border: none; background: none;">На факультете радио и телевидения МТУСИ готовят специалистов в области разработки, проектирования и эксплуатации радиотехнических систем, устройств и комплексов для телевидения, радиовещания, мобильной и спутниковой связи.</p>
+                    <p style="margin: 0; padding: 0; border: none; background: none;">Обучение в МТУСИ даёт возможность работать с современным оборудованием, участвовать в научно-исследовательских проектах и проходить практику в ведущих компаниях телекоммуникационной отрасли.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Мои навыки</h2>
+                <p class="section-subtitle">Технические и профессиональные компетенции, которые я развиваю в процессе обучения</p>
+            </div>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3>Технические навыки</h3>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <div class="skill-name">Основы радиотехники</div>
+                            <div class="skill-percentage">85%</div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="85"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <div class="skill-name">Основы электроники</div>
+                            <div class="skill-percentage">80%</div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="80"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <div class="skill-name">Цифровая обработка сигналов</div>
+                            <div class="skill-percentage">75%</div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="75"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <div class="skill-name">Основы телевещания</div>
+                            <div class="skill-percentage">70%</div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="70"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Программирование и ПО</h3>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <div class="skill-name">MATLAB</div>
+                            <div class="skill-percentage">75%</div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="75"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <div class="skill-name">C/C++</div>
+                            <div class="skill-percentage">70%</div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="70"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <div class="skill-name">Python</div>
+                            <div class="skill-percentage">65%</div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="65"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <div class="skill-name">Системы автоматизированного проектирования</div>
+                            <div class="skill-percentage">70%</div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="70"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Языки и личные качества</h3>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <div class="skill-name">Русский язык</div>
+                            <div class="skill-percentage">95%</div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="95"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <div class="skill-name">Английский язык</div>
+                            <div class="skill-percentage">80%</div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="80"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <div class="skill-name">Аналитическое мышление</div>
+                            <div class="skill-percentage">85%</div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="85"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <div class="skill-name">Работа в команде</div>
+                            <div class="skill-percentage">90%</div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="90"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Учебные проекты</h2>
+                <p class="section-subtitle">Проекты и работы, выполненные в процессе обучения в МТУСИ</p>
+            </div>
+            <div class="projects-container">
+                <div class="project-card">
+                    <div class="project-header">
+                        <i class="fas fa-satellite"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Моделирование радиопередатчика</h3>
+                        <p>Разработка и моделирование простейшего радиопередатчика в среде MATLAB с анализом характеристик сигнала и спектра. Проект включает расчёт параметров модуляции и демодуляции сигнала.</p>
+                        <div class="project-tags">
+                            <span class="tag">MATLAB</span>
+                            <span class="tag">Радиотехника</span>
+                            <span class="tag">Моделирование</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-header">
+                        <i class="fas fa-wave-square"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Цифровая обработка аудиосигналов</h3>
+                        <p>Программа на Python для фильтрации и обработки аудиосигналов с применением алгоритмов быстрого преобразования Фурье (БПФ). Включает возможности шумоподавления и анализа частотного спектра.</p>
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">ЦОС</span>
+                            <span class="tag">Алгоритмы</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-header">
+                        <i class="fas fa-tv"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Модель телевизионной системы</h3>
+                        <p>Проектирование упрощённой модели цифровой телевизионной системы передачи и приёма изображения. Включает этапы кодирования, передачи и декодирования видеосигнала с оценкой качества.</p>
+                        <div class="project-tags">
+                            <span class="tag">C++</span>
+                            <span class="tag">Телевидение</span>
+                            <span class="tag">Обработка видео</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Контакты</h2>
+                <p class="section-subtitle">Свяжитесь со мной для сотрудничества или получения дополнительной информации</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Контактная информация</h3>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-university"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Университет</h4>
+                            <p>МТУСИ (Московский технический университет связи и информатики)</p>
+                            <p>Факультет радио и телевидения</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Группа и направление</h4>
+                            <p>БИК 2504</p>
+                            <p>Направление: Радио и телевидение</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Электронная почта</h4>
+                            <p>edilson.makuakua@mtuci.ru</p>
+                            <p>edilson.makuakua.student@mtuci.ru</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Местоположение</h4>
+                            <p>Москва, Россия</p>
+                            <p>МТУСИ: ул. Авиамоторная, 8а</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h3>Отправить сообщение</h3>
+                    <form id="messageForm">
+                        <div class="form-group">
+                            <label for="name">Ваше имя *</label>
+                            <input type="text" id="name" placeholder="Введите ваше имя" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Ваш Email *</label>
+                            <input type="email" id="email" placeholder="Введите ваш email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Тема сообщения *</label>
+                            <input type="text" id="subject" placeholder="Введите тему сообщения" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Сообщение *</label>
+                            <textarea id="message" rows="5" placeholder="Введите ваше сообщение..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn" style="width: 100%;">
+                            <i class="fas fa-paper-plane" style="margin-right: 10px;"></i>Отправить сообщение
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-logo">
+                <div class="footer-logo-icon">
+                    <i class="fas fa-broadcast-tower"></i>
+                </div>
+                <div class="footer-logo-text">
+                    <h2>Эдилсон Макуакуа</h2>
+                    <p>Студент МТУСИ | Радио и телевидение | БИК 2504</p>
+                </div>
+            </div>
+            
+            <div class="social-links">
+                <a href="#" title="ВКонтакте"><i class="fab fa-vk"></i></a>
+                <a href="#" title="Telegram"><i class="fab fa-telegram"></i></a>
+                <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
+                <a href="#" title="Научные работы"><i class="fas fa-graduation-cap"></i></a>
+            </div>
+            
+            <div class="copyright">
+                <p>© 2025 Эдилсон Макуакуа. Все права защищены.</p>
+                <p>Московский технический университет связи и информатики (МТУСИ)</p>
+                <p style="margin-top: 10px; font-size: 0.9rem;">Портфолио студента направления "Радио и телевидение", группа БИК 2504</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+            const icon = mobileMenuBtn.querySelector('i');
+            if (mobileMenu.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+        
+        // Close mobile menu when clicking on a link
+        const mobileMenuLinks = document.querySelectorAll('.mobile-menu a');
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+                const icon = mobileMenuBtn.querySelector('i');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            });
+        });
+        
+        // Form submission
+        const messageForm = document.getElementById('messageForm');
+        messageForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+            
+            // In a real application, you would send this data to a server
+            // For this example, we'll just show an alert
+            alert(`Уважаемый(ая) ${name}! Ваше сообщение на тему "${subject}" было успешно отправлено. Я свяжусь с вами в ближайшее время по указанному email: ${email}. Спасибо за обращение!`);
+            
+            // Reset form
+            messageForm.reset();
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Update active nav link
+                    document.querySelectorAll('nav a').forEach(link => {
+                        link.classList.remove('active');
+                    });
+                    this.classList.add('active');
+                }
+            });
+        });
+        
+        // Animate skill bars when they come into view
+        const animateSkillBars = () => {
+            const skillBars = document.querySelectorAll('.skill-progress');
+            skillBars.forEach(bar => {
+                const width = bar.getAttribute('data-width');
+                bar.style.width = width + '%';
+            });
+        };
+        
+        // Observer for skill bars animation
+        const skillsSection = document.getElementById('skills');
+        const observerOptions = {
+            threshold: 0.3
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateSkillBars();
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+        
+        if (skillsSection) {
+            observer.observe(skillsSection);
+        }
+        
+        // Set current year in footer
+        document.addEventListener('DOMContentLoaded', function() {
+            const yearElement = document.querySelector('.copyright p');
+            if (yearElement) {
+                yearElement.innerHTML = yearElement.innerHTML.replace('2025', new Date().getFullYear());
+            }
+        });
+    </script>
+</body>
+</html>
